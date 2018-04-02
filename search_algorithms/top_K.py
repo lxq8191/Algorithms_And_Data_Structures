@@ -28,3 +28,18 @@ print(sl.topk(nums, 3))
 
 print(heapq.nlargest(3, nums)) # top K大的数字
 print(heapq.nsmallest(3, nums)) # 最小的K个数字
+
+# 使用heapq实现小顶堆
+ans = []
+heapq.heappush(ans,3) # 加入堆
+heapq.heappop(ans)
+
+# 如果想要实现大顶堆，在加入堆中时取其相反数，取出时再取其相反数即可
+ans = []
+heapq.heappush(ans,-3) # 加入堆
+heapq.heappop(ans)
+
+# 将列表调整成小顶堆
+lst = [1,5,3,7,9]
+heapq.heapify(lst)
+
