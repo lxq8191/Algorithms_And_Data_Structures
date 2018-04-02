@@ -1,3 +1,4 @@
+# coding=utf-8
 def quickSort(arr):
     less = []
     more = []
