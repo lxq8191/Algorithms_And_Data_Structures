@@ -10,9 +10,13 @@ def bSearch(lst, val):
         if low < high and lst[mid] > val:
             high = mid - 1
     
-    print(low)
-    print(high)
+    if low - 1 > 0 and abs(lst[low-1] - val) < abs(lst[low] - val):
+        return low - 1
+    elif high + 1 < len(lst) and abs(lst[high + 1] - val) < abs(lst[high] - val):
+        return high + 1
+    else:
+        return low
 
-arr = [1,2,3,4,5,7]
+arr = [1,2,3,4,7,7,9]
 value = 6
 print(bSearch(arr, value))
