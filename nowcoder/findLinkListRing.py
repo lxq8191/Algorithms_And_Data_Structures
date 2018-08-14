@@ -21,4 +21,36 @@ class ListNode:
             if pFast != None:
                 pFast = pFast.next
         return None
+    
+    def findRingNode(self, p):
+        if p == None:
+            return None
+        pSlow = p
+        if pSlow.next == None:
+            return None
+        pFast = pSlow.next
+        while pSlow != None and pFast != None:
+            if pSlow == pFast:
+                return pFast
+            pSlow = pSlow.next
+            pFast = pFast.next
+            if pFast != None:
+                pFast = pFast.next
+        return None
+
+    def findRingNode(self, p):
+        if p == None:
+            return None
+        pSlow = p
+        pFast = p
+        while pFast and pFast.next:
+            pSlow = pSlow.next
+            pFast = pFast.next.next
+            if pSlow == pFast:
+                pSlow = p
+                while pFast != pSlow:
+                    pSlow = pSlow.next
+                    pFast = pFast.next
+                return pFast
+        return None
 

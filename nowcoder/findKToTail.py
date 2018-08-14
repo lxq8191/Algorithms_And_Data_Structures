@@ -26,3 +26,19 @@ class Solution:
             pLen += 1
             p = p.next
         return pLen
+
+    def FindKthToTail2(self, head, k):
+        # write code here
+        if k <= 0 and not head:
+            return None
+        pFast = head
+        pSlow = head
+        while pFast != None:
+            if k <= 0:
+                pSlow = pSlow.next
+            k -= 1
+            pFast = pFast.next
+        if k <= 0:
+            return pSlow
+        else:
+            return None
